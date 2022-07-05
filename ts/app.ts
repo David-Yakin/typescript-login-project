@@ -1,5 +1,12 @@
 import User from "./models/User.js";
 
+const EMAIL = document.getElementById("email-field") as HTMLInputElement;
+const PASSWORD = document.getElementById("password-field") as HTMLInputElement;
+const ERRORS = document.getElementById("errors") as HTMLSpanElement;
+const SUCCESS = document.getElementById("result") as HTMLDivElement;
+const SUBMIT_BTN = document.getElementById("submit-btn") as HTMLButtonElement;
+const CANCEL_BTN = document.getElementById("cancel-btn") as HTMLButtonElement;
+
 const firstUser = new User({
   name: { first: "regular", last: "user" },
   address: {
@@ -18,13 +25,6 @@ const firstUser = new User({
 });
 
 let users: Array<User> = [firstUser];
-
-const EMAIL = document.getElementById("email-field") as HTMLInputElement;
-const PASSWORD = document.getElementById("password-field") as HTMLInputElement;
-const ERRORS = document.getElementById("errors") as HTMLSpanElement;
-const SUCCESS = document.getElementById("result") as HTMLDivElement;
-const SUBMIT_BTN = document.getElementById("submit-btn") as HTMLButtonElement;
-const CANCEL_BTN = document.getElementById("cancel-btn") as HTMLButtonElement;
 
 const cleanForm = (): void => {
   EMAIL.value = "";
